@@ -1,13 +1,13 @@
-html, body {
-height: 100%;
-margin: 0;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+html{
+min-height:100%;
+background: linear-gradient(225deg, #93efffd5, #5000005d);
 }
 
-body {
-margin: 0;
-min-height: 100vh;
-background: linear-gradient(225deg, #93efffd5, #5000005d);
+body{
+min-height:100%;
+margin:0;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background:none;
 }
 
 .a{
@@ -28,12 +28,12 @@ border: inset 0.3rem maroon;
 
 .roko2{
 width:80vw;
-border: inset 0.3rem rgb(128, 119, 0);
+border: inset 0.3rem rgb(128,119,0);
 }
 
 .roko3{
 width:80vw;
-border: inset 0.3rem rgb(0, 128, 128);
+border: inset 0.3rem rgb(0,128,128);
 }
 
 .roko img{
@@ -55,7 +55,7 @@ color:maroon;
 font-size:0.7rem;
 }
 
-/* PC表示 */
+/* PC */
 
 @media (min-width:768px){
 
@@ -64,9 +64,8 @@ flex-direction:row;
 justify-content:center;
 }
 
-.roko{
+.roko1,.roko2,.roko3{
 width:27vw;
 }
 
 }
-
