@@ -41,113 +41,72 @@
 </div>
 <script>
 
+/* 共通関数 */
+
+function setupViewer(imgId, poses){
+
+let index = 0;
+const img = document.getElementById(imgId);
+
+function show(){
+img.src = poses[index];
+}
+
+function next(){
+index = (index + 1) % poses.length;
+show();
+}
+
+function prev(){
+index = (index - 1 + poses.length) % poses.length;
+show();
+}
+
+function tap(x){
+const rect = img.getBoundingClientRect();
+const half = rect.width / 2;
+
+if(x < half){
+prev();
+}else{
+next();
+}
+}
+
+img.addEventListener("click",(e)=>{
+tap(e.clientX - img.getBoundingClientRect().left);
+});
+
+}
+
+
 /* 霊夢 */
 
-const poses1 = [
+setupViewer("char1",[
 "霊夢(無料版).webp",
 "霊夢(無料版)_0000.webp",
 "霊夢(無料版)_0001.webp",
 "霊夢(無料版)_0002.webp",
 "霊夢(無料版)_0003.webp",
 "霊夢(無料版)_0004.webp",
-];
-
-let index1 = 0;
-
-function show1(){
-document.getElementById("char1").src = poses1[index1];
-}
-
-function next1(){
-index1 = (index1 + 1) % poses1.length;
-show1();
-}
-
-function prev1(){
-index1 = (index1 - 1 + poses1.length) % poses1.length;
-show1();
-}
-
-const img1 = document.getElementById("char1");
-
-function tap1(x){
-
-const rect = img1.getBoundingClientRect();
-const half = rect.width / 2;
-
-if(x < half){
-prev1();
-}else{
-next1();
-}
-
-}
-
-img1.addEventListener("click",(e)=>{
-tap1(e.clientX - img1.getBoundingClientRect().left);
-});
-
-img1.addEventListener("touchstart",(e)=>{
-tap1(e.touches[0].clientX - img1.getBoundingClientRect().left);
-});
-
+]);
 
 
 /* 魔理沙 */
 
-const poses2 = [
+setupViewer("char2",[
 "魔理沙(無料版).webp",
 "魔理沙(無料版)_0001.webp",
 "魔理沙(無料版)_0002.webp",
 "魔理沙(無料版)_0003.webp",
 "魔理沙(無料版)_0004.webp",
 "魔理沙(無料版)_0005.webp",
-];
-
-let index2 = 0;
-
-function show2(){
-document.getElementById("char2").src = poses2[index2];
-}
-
-function next2(){
-index2 = (index2 + 1) % poses2.length;
-show2();
-}
-
-function prev2(){
-index2 = (index2 - 1 + poses2.length) % poses2.length;
-show2();
-}
-
-const img2 = document.getElementById("char2");
-
-function tap2(x){
-
-const rect = img2.getBoundingClientRect();
-const half = rect.width / 2;
-
-if(x < half){
-prev2();
-}else{
-next2();
-}
-
-}
-
-img2.addEventListener("click",(e)=>{
-tap2(e.clientX - img2.getBoundingClientRect().left);
-});
-
-img2.addEventListener("touchstart",(e)=>{
-tap2(e.touches[0].clientX - img2.getBoundingClientRect().left);
-});
-
+]);
 
 
 /* 妖夢 */
 
-const poses3 = [
+setupViewer("char3",[
 "妖夢(無料版).png",
 "妖夢(無料版)_0000.png",
 "妖夢(無料版)_0001.png",
@@ -155,47 +114,8 @@ const poses3 = [
 "妖夢(無料版)_0003.png",
 "妖夢(無料版)_0004.png",
 "妖夢(無料版)_0005.png",
-];
+]);
 
-let index3 = 0;
-
-function show3(){
-document.getElementById("char3").src = poses3[index3];
-}
-
-function next3(){
-index3 = (index3 + 1) % poses3.length;
-show3();
-}
-
-function prev3(){
-index3 = (index3 - 1 + poses3.length) % poses3.length;
-show3();
-}
-
-const img3 = document.getElementById("char3");
-
-function tap3(x){
-
-const rect = img3.getBoundingClientRect();
-const half = rect.width / 2;
-
-if(x < half){
-prev3();
-}else{
-next3();
-}
-
-}
-
-img3.addEventListener("click",(e)=>{
-tap3(e.clientX - img3.getBoundingClientRect().left);
-});
-
-img3.addEventListener("touchstart",(e)=>{
-tap3(e.touches[0].clientX - img3.getBoundingClientRect().left);
-});
 </script>
-
 </body>
 </html>
