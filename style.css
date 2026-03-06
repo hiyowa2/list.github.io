@@ -72,6 +72,9 @@ width:27vw;
 }
 
 
-body,html{
-  background: linear-gradient(225deg, #93efffd5, #5000005d);
+
+ body,html{
+  background: linear-gradient(225deg, hsla(189, 100%, 79%, 0.835),hsla(140, 100%, 16%, 0.171), hsla(0, 100%, 8%, 0.506));
+
 }
+
