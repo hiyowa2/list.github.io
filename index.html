@@ -41,7 +41,9 @@
 </div>
 <script>
 
-const poses = [
+/* 霊夢 */
+
+const poses1 = [
 "霊夢(無料版).webp",
 "霊夢(無料版)_0000.webp",
 "霊夢(無料版)_0001.webp",
@@ -50,46 +52,148 @@ const poses = [
 "霊夢(無料版)_0004.webp",
 ];
 
-let index = 0;
+let index1 = 0;
 
-function show(){
-document.getElementById("char1").src = poses[index];
+function show1(){
+document.getElementById("char1").src = poses1[index1];
 }
 
-function next(){
-index = (index + 1) % poses.length;
-show();
+function next1(){
+index1 = (index1 + 1) % poses1.length;
+show1();
 }
 
-function prev(){
-index = (index - 1 + poses.length) % poses.length;
-show();
+function prev1(){
+index1 = (index1 - 1 + poses1.length) % poses1.length;
+show1();
 }
 
-const img = document.getElementById("char1");
+const img1 = document.getElementById("char1");
 
-function tap(x){
+function tap1(x){
 
-const rect = img.getBoundingClientRect();
+const rect = img1.getBoundingClientRect();
 const half = rect.width / 2;
 
 if(x < half){
-prev();
+prev1();
 }else{
-next();
+next1();
 }
 
 }
 
-img.addEventListener("click",(e)=>{
-tap(e.clientX - img.getBoundingClientRect().left);
+img1.addEventListener("click",(e)=>{
+tap1(e.clientX - img1.getBoundingClientRect().left);
 });
 
-img.addEventListener("touchstart",(e)=>{
-tap(e.touches[0].clientX - img.getBoundingClientRect().left);
+img1.addEventListener("touchstart",(e)=>{
+tap1(e.touches[0].clientX - img1.getBoundingClientRect().left);
 });
-/* ここまで */
 
+
+
+/* 魔理沙 */
+
+const poses2 = [
+"魔理沙.webp",
+"魔理沙_0000.webp",
+"魔理沙_0001.webp",
+"魔理沙_0002.webp",
+"魔理沙_0003.webp",
+"魔理沙_0004.webp",
+];
+
+let index2 = 0;
+
+function show2(){
+document.getElementById("char2").src = poses2[index2];
+}
+
+function next2(){
+index2 = (index2 + 1) % poses2.length;
+show2();
+}
+
+function prev2(){
+index2 = (index2 - 1 + poses2.length) % poses2.length;
+show2();
+}
+
+const img2 = document.getElementById("char2");
+
+function tap2(x){
+
+const rect = img2.getBoundingClientRect();
+const half = rect.width / 2;
+
+if(x < half){
+prev2();
+}else{
+next2();
+}
+
+}
+
+img2.addEventListener("click",(e)=>{
+tap2(e.clientX - img2.getBoundingClientRect().left);
+});
+
+img2.addEventListener("touchstart",(e)=>{
+tap2(e.touches[0].clientX - img2.getBoundingClientRect().left);
+});
+
+
+
+/* 妖夢 */
+
+const poses3 = [
+"妖夢.webp",
+"妖夢_0000.webp",
+"妖夢_0001.webp",
+"妖夢_0002.webp",
+"妖夢_0003.webp",
+"妖夢_0004.webp",
+];
+
+let index3 = 0;
+
+function show3(){
+document.getElementById("char3").src = poses3[index3];
+}
+
+function next3(){
+index3 = (index3 + 1) % poses3.length;
+show3();
+}
+
+function prev3(){
+index3 = (index3 - 1 + poses3.length) % poses3.length;
+show3();
+}
+
+const img3 = document.getElementById("char3");
+
+function tap3(x){
+
+const rect = img3.getBoundingClientRect();
+const half = rect.width / 2;
+
+if(x < half){
+prev3();
+}else{
+next3();
+}
+
+}
+
+img3.addEventListener("click",(e)=>{
+tap3(e.clientX - img3.getBoundingClientRect().left);
+});
+
+img3.addEventListener("touchstart",(e)=>{
+tap3(e.touches[0].clientX - img3.getBoundingClientRect().left);
+});
 </script>
 
 </body>
