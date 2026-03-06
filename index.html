@@ -1,94 +1,66 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-<link rel="stylesheet" href="style.css">
-<meta charset="UTF-8">
-<title>ヒヨワニ動画内素材リスト</title>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+    <title>ヒヨワニ動画内素材リスト</title>
 </head>
-
-<body>
-
+  <body>
 <div class="white">
-<div class="a">
-
-<p>立ち絵:</p>
-
+  <div class="a">
+ 
+    <p>立ち絵:</p>
+    <p>
 <div class="roko">
-<div class="viewpoint">
-
-<button onclick="prev()">◀</button>
-
-<img id="char" src="霊夢(無料版).webp">
-
-<button onclick="next()">▶</button>
-
-</div>
+  <div class="viewpoint">
+  <button onclick="prev()">◀</button>
+  <img id="char" src="霊夢(無料版).webp">
+  <button onclick="next()">▶</button>
 </div>
 
-ロコ式:
-<span class="maroon">
-<a href="https://roko-sroom.fanbox.cc/posts?page=3&sort=newest" target="blank">リンク</a>
+</div>
+    </p>
+
+      ロコ式:
+<span class="maroon"><a href="https://roko-sroom.fanbox.cc/posts?page=3&sort=newest"target="blank">リンク</a>
 </span>
+</div>
+</div>
+</div>
 
-</div>
-</div>
+
+
+
 
 <script>
-
 const poses = [
-"霊夢(無料版).webp",
-"霊夢(無料版)_0000.webp",
-"霊夢(無料版)_0001.webp",
-"霊夢(無料版)_0002.webp",
-"霊夢(無料版)_0003.webp",
-"霊夢(無料版)_0004.webp",
+  "霊夢(無料版).webp",
+  "霊夢(無料版)_0000.webp",
+  "霊夢(無料版)_0001.webp",
+  "霊夢(無料版)_0002.webp",
+  "霊夢(無料版)_0003.webp",
+  "霊夢(無料版)_0004.webp",
 ];
 
 let index = 0;
 
 function show(){
-document.getElementById("char").src = poses[index];
+  document.getElementById("char").src = poses[index];
 }
 
 function next(){
-index = (index + 1) % poses.length;
-show();
+  index = (index + 1) % poses.length;
+  show();
 }
 
 function prev(){
-index = (index - 1 + poses.length) % poses.length;
-show();
+  index = (index - 1 + poses.length) % poses.length;
+  show();
 }
-
-
-/* ここから追加 */
-
-const img = document.getElementById("char");
-
-function tap(x){
-
-const rect = img.getBoundingClientRect();
-const half = rect.width / 2;
-
-if(x < half){
-prev();
-}else{
-next();
-}
-
-}
-
-img.addEventListener("click",(e)=>{
-tap(e.clientX - img.getBoundingClientRect().left);
-});
-
-img.addEventListener("touchstart",(e)=>{
-tap(e.touches[0].clientX - img.getBoundingClientRect().left);
-});
-
-/* ここまで */
-
 </script>
+
+
+
 
 </body>
 </html>
