@@ -62,4 +62,6 @@ img {
 .viewer img{
   width:300px;
 }
-
+.min{
+  text-size:0.9rem;
+}
